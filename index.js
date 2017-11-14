@@ -1,8 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-
 var app = express();
-var articalDao = require('./dao/artical');
+
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -18,11 +17,19 @@ app.all('*', function(req, res, next) {
 });
 
 var server = app.listen(8080, function () {
-    var host = server.address().address;
-    var port = server.address().port;
-
-    console.log('Example app listening at http://%s:%s', host, port);
+  var host = server.address().address;
+  var port = server.address().port;
+  console.log('Example app listening at http://%s:%s', host, port);
 });
-app.get('/api/article',function(req, res, next){
-   articalDao.query(req, res, next);
+
+// 微信文章内容
+var articalDao = require('./weixin/artical');
+app.get('/api/article', function(req, res, next){
+  articalDao.query(req, res, next);
+});
+
+// 微信分享
+var wechatShare = require('./weixin/share');
+app.get('/api/wechatShare', function(req, res, next){
+  wechatShare.query(req, res, next);
 });

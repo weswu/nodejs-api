@@ -1,13 +1,12 @@
 {
   "name": "nodejs-api",
   "version": "0.1.0",
+  "author": "wes",
   "description": "用nodejs写接口",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "author": "wes",
-  "license": "MIT",
   "dependencies": {
     "async": "^2.2.0",
     "body-parser": "^1.17.1",
