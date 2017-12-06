@@ -35,6 +35,11 @@ now --public  生成链接地址
 | --- | :---: | --- | --- | --- |
 | url | 是 | 微信文章链接地址 | - | - |
 
+例如
+https://mp.weixin.qq.com/s/n5lZxufiBkRe5uD7pfhsag
+
+https://mp.weixin.qq.com/s?__biz=MzA4MzEzNTU4NQ==&mid=2451317459&idx=1&sn=3d21b79881c94ed48cc413672a2b6665&chksm=88139fddbf6416cb00ba84db97df052fb5ad62325a560aeacb157a7b8abe4ad1c0072e6a4d74#rd
+
 
 ## 参考
 - [zgj233-抓取文章](https://github.com/zgj233/weixin_article_spiders)

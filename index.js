@@ -23,13 +23,13 @@ var server = app.listen(8080, function () {
 });
 
 // 微信文章内容
-var articalDao = require('./weixin/artical');
-app.get('/api/article', function(req, res, next){
+var articalDao = require('./weixin/article');
+app.get('/api/wechat/article', function(req, res, next){
   articalDao.query(req, res, next);
 });
 
 // 微信分享
-var wechatShare = require('./weixin/share');
-app.get('/api/wechatShare', function(req, res, next){
+var wechatShare = require('./weixin/js-sdk');
+app.get('/api/wechat/jsSdk', function(req, res, next){
   wechatShare.query(req, res, next);
 });

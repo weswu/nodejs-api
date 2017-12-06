@@ -6,7 +6,7 @@
 var request = require('request');
 var cheerio = require('cheerio');
 
-var articalDao = {
+var article = {
   query: function (req, res, next) {
     var urlStr = req.query.url;
     request(urlStr, function (err, response, body) {
@@ -37,4 +37,4 @@ function filterWeixinArticle(html, res) {
   });
 }
 
-module.exports = articalDao;
+module.exports = article;

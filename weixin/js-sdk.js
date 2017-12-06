@@ -7,15 +7,16 @@ var crypto = require('crypto')
 var https = require('https');
 var iconv = require("iconv-lite");
 
-var appid = 'wxe4c05b399c083201'
-var appsecret = 'd5c665786530ac03d86e8f346c8d20fe'
+var appid = ''
+var appsecret = ''
 var nonceStr = ''
-var signature = ''
 var urlStr = ''
 
 var share = {
   query: function (req, res, next) {
     urlStr = req.query.url;
+    appid = req.query.appid || 'wxe4c05b399c083201';
+    appsecret = req.query.appsecret || 'd5c665786530ac03d86e8f346c8d20fe';
     nonceStr = getRandomString(12)
     getAccessToken(res);
   }
